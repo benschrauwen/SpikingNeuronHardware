@@ -1,0 +1,5 @@
+vhdl work "utility.vhdl"
+vhdl work "settings_minimal.vhdl"
+vhdl work "controller.vhdl"
+vhdl work "network.vhdl"
+vhdl work "network_hardware.vhdl"

@@ -1,0 +1,15 @@
+##############################################################################
+## Filename:          C:\temp\nipsedk/drivers/SNN_v1_00_a/data/SNN_v2_1_0.mdd
+## Description:       Microprocessor Driver Definition
+## Date:              Tue Nov 21 16:04:57 2006 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+OPTION psf_version = 2.1.0;
+
+BEGIN DRIVER SNN
+
+  OPTION supported_peripherals = (SNN);
+  OPTION depends = (common_v1_00_a);
+  OPTION copyfiles = all;
+
+END DRIVER

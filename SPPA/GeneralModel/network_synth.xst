@@ -1,0 +1,12 @@
+set -loop_iteration_limit 256
+run
+-ifn network_synth.prj
+-ifmt VHDL
+-ofn network_synth.ngc
+-top network
+-ofmt NGC 
+-p virtex4
+-opt_mode Area
+-opt_level 2
+-iobuf YES
+-rom_style block

@@ -1,0 +1,50 @@
+#Please do not modify this file by hand
+XmpVersion: 9.1.02
+VerMgmt: 9.1.02
+IntStyle: default
+MHS File: system.mhs
+MSS File: system.mss
+NPL File: projnav/system.ise
+Architecture: virtex4
+Device: xc4vsx35
+Package: ff668
+SpeedGrade: -12
+UseProjNav: 0
+PNImportBitFile: projnav/system.bit
+PNImportBmmFile: implementation/system_bd.bmm
+UserCmd1: 
+UserCmd1Type: 0
+UserCmd2: 
+UserCmd2Type: 0
+TopInst: system_i
+GenSimTB: 0
+InsertNoPads: 0
+WarnForEAArch: 1
+HdlLang: VHDL
+Simulator: mti
+SimModel: BEHAVIORAL
+MixLangSim: 1
+UcfFile: data/system.ucf
+FpgaImpMode: 0
+ShowLicenseDialog: 1
+Processor: microblaze_0
+BootLoop: 0
+XmdStub: 0
+SwProj: audiotest
+Processor: microblaze_0
+Executable: audiotest/executable.elf
+Source: SDK_projects/audiotest/main.c
+DefaultInit: EXECUTABLE
+InitBram: 1
+Active: 1
+CompilerOptLevel: 2
+GlobPtrOpt: 0
+DebugSym: 0
+ProfileFlag: 0
+ProgStart: 
+StackSize: 
+HeapSize: 
+LinkerScript: audiotest_linker_script.ld
+ProgCCFlags: 
+CompileInXps: 1
+NonXpsApp: 0

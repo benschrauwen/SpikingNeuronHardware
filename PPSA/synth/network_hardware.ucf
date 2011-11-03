@@ -1,0 +1,33 @@
+NET "s_clk" TNM_NET = "xmplr_s_clk";
+TIMESPEC "TS_clk_ClockDomain0" = PERIOD "xmplr_s_clk" 10.000000 ns HIGH 50.000000 %;
+
+NET s_clk LOC = "ae14";         # 100 Mhz clock
+NET s_reset LOC = "b6";         # center button
+
+NET s_inputs(0) LOC = "aa24";
+NET s_inputs(1) LOC = "v20";
+NET s_inputs(2) LOC = "ac25";
+NET s_inputs(3) LOC = "ac24";
+NET s_inputs(4) LOC = "w25";
+NET s_inputs(5) LOC = "ab24";
+NET s_inputs(6) LOC = "y24";
+NET s_inputs(7) LOC = "ab23";
+NET s_inputs(8) LOC = "w26";
+NET s_inputs(9) LOC = "y26";
+
+NET s_outputs(0) LOC = "y25";
+NET s_outputs(1) LOC = "aa26";
+NET s_outputs(2) LOC = "aa23";
+NET s_outputs(3) LOC = "ac21";
+NET s_outputs(4) LOC = "ab26";
+NET s_outputs(5) LOC = "ac23";
+NET s_outputs(6) LOC = "ab25";
+NET s_outputs(7) LOC = "ad23";
+NET s_outputs(8) LOC = "ac26";
+NET s_outputs(9) LOC = "ad26";
+#NET s_outputs(10) LOC = "ac22";
+#NET s_outputs(11) LOC = "v22";
+#NET s_outputs(12) LOC = "v21";
+#NET s_outputs(13) LOC = "w22";
+#NET s_outputs(14) LOC = "ad25";
+#NET s_outputs(15) LOC = "ab22";

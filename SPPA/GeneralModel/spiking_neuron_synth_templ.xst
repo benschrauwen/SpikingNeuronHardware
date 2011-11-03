@@ -1,0 +1,11 @@
+set -loop_iteration_limit 256
+run
+-ifn spiking_neuron_synth.prj
+-ifmt VHDL
+-ofn spiking_neuron.ngc
+-top spiking_neuron_$NEURON_NR$
+-ofmt NGC 
+-p virtex4
+-opt_mode Area
+-opt_level 2
+-iobuf NO

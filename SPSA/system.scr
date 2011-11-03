@@ -1,0 +1,1 @@
+run -resource_sharing no -bufg yes -opt_mode speed -opt_level 2 -p xc4vsx35ff668-10 -top system_snn -ifn system.prj -ofn system_snn.ngc -iobuf no -hierarchy_separator /

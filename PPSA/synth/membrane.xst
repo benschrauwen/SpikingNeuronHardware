@@ -1,0 +1,10 @@
+set -loop_iteration_limit 256
+run
+-ifn membrane.prj
+-ifmt VHDL
+-ofn membrane.ngc
+-ofmt NGC 
+-p virtex4
+-opt_mode Area
+-opt_level 2
+-iobuf NO

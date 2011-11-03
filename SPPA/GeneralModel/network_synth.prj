@@ -1,0 +1,8 @@
+vhdl work "utility.vhdl"
+vhdl work "settings.vhdl"
+vhdl work "neuron_config.vhdl"
+vhdl work "mem_settings.vhdl"
+vhdl work "memory.vhdl"
+vhdl work "neuron_config.vhdl"
+vhdl work "controller.vhdl"
+vhdl work "network_synth.vhdl"

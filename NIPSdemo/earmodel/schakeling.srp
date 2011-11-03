@@ -1,0 +1,1687 @@
+Release 9.1.03i - xst J.33
+Copyright (c) 1995-2007 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "schakeling.prj"
+
+---- Target Parameters
+Target Device                      : xc4vsx35ff668-10
+Output File Name                   : "schakeling.ngc"
+
+---- Source Options
+Top Module Name                    : schakeling
+
+---- Target Options
+Add IO Buffers                     : no
+
+---- General Options
+Optimization Goal                  : speed
+Optimization Effort                : 2
+Hierarchy Separator                : /
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportclk_mem.vhdl" in Library work.
+Architecture structure of Entity twoportclk_mem is up to date.
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/utility.vhdl" in Library work.
+Architecture utility_package of Entity utility_package is up to date.
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/oneport_mem.vhdl" in Library work.
+Architecture structure of Entity oneport_mem is up to date.
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/FSM.vhd" in Library work.
+Architecture gedrag of Entity fsm is up to date.
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/ADC_controller.vhd" in Library work.
+Architecture behaviour of Entity adc_controller is up to date.
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/MUL12.vhd" in Library work.
+Architecture gedrag of Entity mul12 is up to date.
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/ROMgeheugen.vhd" in Library work.
+Architecture gedrag of Entity rom is up to date.
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportrw_mem.vhdl" in Library work.
+Architecture structure of Entity twoportrw_mem is up to date.
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/tweedeordefilter.vhd" in Library work.
+Architecture gedrag of Entity tweedeordefilter is up to date.
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" in Library work.
+Architecture gedrag of Entity ram_agc is up to date.
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/AGC.vhd" in Library work.
+Architecture gedrag of Entity agc is up to date.
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/delsig_mem.vhdl" in Library work.
+Architecture impl of Entity delsig_mem is up to date.
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportclk_switching_fast.vhdl" in Library work.
+Architecture structure of Entity twoportclk_switching_fast is up to date.
+Compiling vhdl file "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/schakeling.vhd" in Library work.
+Entity <schakeling> compiled.
+Entity <schakeling> (Architecture <gedrag>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <schakeling> in library <work> (architecture <gedrag>) with generics.
+	aantal_filters = 88
+	agc_bits = 32
+	anti_quantisatie_bits = 15
+	bit_lengte = 16
+	boost_shifts = 2
+
+Analyzing hierarchy for entity <FSM> in library <work> (architecture <gedrag>) with generics.
+	aantal_filters = 88
+
+Analyzing hierarchy for entity <ADC_controller> in library <work> (architecture <behaviour>).
+
+Analyzing hierarchy for entity <MUL12> in library <work> (architecture <gedrag>) with generics.
+	bit_lengte = 31
+
+Analyzing hierarchy for entity <ROM> in library <work> (architecture <gedrag>) with generics.
+	aantal_filters = 88
+	bit_lengte = 16
+
+Analyzing hierarchy for entity <twoportrw_mem> in library <work> (architecture <structure>) with generics.
+	ADDRESS_WIDTH = 7
+	DATA_WIDTH = 124
+	MEMORY_AMOUNT = 88
+
+Analyzing hierarchy for entity <twoportrw_mem> in library <work> (architecture <structure>) with generics.
+	ADDRESS_WIDTH = 7
+	DATA_WIDTH = 31
+	MEMORY_AMOUNT = 88
+
+Analyzing hierarchy for entity <tweedeordefilter> in library <work> (architecture <gedrag>) with generics.
+	aantal_filters = 88
+	bit_lengte = 31
+	rom_lengte = 16
+
+Analyzing hierarchy for entity <RAM_AGC> in library <work> (architecture <gedrag>) with generics.
+	aantal_filters = 88
+	bit_lengte = 31
+
+Analyzing hierarchy for entity <AGC> in library <work> (architecture <gedrag>) with generics.
+	aantal_filters = 88
+	bit_lengte = 31
+	fixed_point_bits = 32
+	g_epsilon = 0.000098
+	g_target = 0.003200
+
+Analyzing hierarchy for entity <AGC> in library <work> (architecture <gedrag>) with generics.
+	aantal_filters = 88
+	bit_lengte = 31
+	fixed_point_bits = 32
+	g_epsilon = 0.000391
+	g_target = 0.001600
+
+Analyzing hierarchy for entity <AGC> in library <work> (architecture <gedrag>) with generics.
+	aantal_filters = 88
+	bit_lengte = 31
+	fixed_point_bits = 32
+	g_epsilon = 0.001514
+	g_target = 0.000800
+
+Analyzing hierarchy for entity <AGC> in library <work> (architecture <gedrag>) with generics.
+	aantal_filters = 88
+	bit_lengte = 31
+	fixed_point_bits = 32
+	g_epsilon = 0.006230
+	g_target = 0.000400
+
+Analyzing hierarchy for entity <delsig_mem> in library <work> (architecture <impl>) with generics.
+	ADDRESS_WIDTH = 7
+	INPUT_WIDTH = 14
+	NB_INSTANCES = 88
+
+Analyzing hierarchy for entity <twoportclk_switching_fast> in library <work> (architecture <structure>) with generics.
+	ADDRESS_WIDTH = 7
+	DATA_WIDTH = 1
+	MEMORY_AMOUNT = 88
+
+Analyzing hierarchy for entity <oneport_mem> in library <work> (architecture <structure>) with generics.
+	ADDRESS_WIDTH = 7
+	DATA_WIDTH = 15
+	MEMORY_AMOUNT = 88
+
+Analyzing hierarchy for entity <twoportclk_mem> in library <work> (architecture <structure>) with generics.
+	ADDRESS_WIDTH = 8
+	DATA_WIDTH = 1
+	MEMORY_AMOUNT = 216
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <schakeling> in library <work> (Architecture <gedrag>).
+	aantal_filters = 88
+	agc_bits = 32
+	anti_quantisatie_bits = 15
+	bit_lengte = 16
+	boost_shifts = 2
+WARNING:Xst:753 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/schakeling.vhd" line 307: Unconnected output port 'd_1' of component 'twoportclk_switching_fast'.
+Entity <schakeling> analyzed. Unit <schakeling> generated.
+
+Analyzing generic Entity <FSM> in library <work> (Architecture <gedrag>).
+	aantal_filters = 88
+Entity <FSM> analyzed. Unit <FSM> generated.
+
+Analyzing Entity <ADC_controller> in library <work> (Architecture <behaviour>).
+Entity <ADC_controller> analyzed. Unit <ADC_controller> generated.
+
+Analyzing generic Entity <MUL12> in library <work> (Architecture <gedrag>).
+	bit_lengte = 31
+Entity <MUL12> analyzed. Unit <MUL12> generated.
+
+Analyzing generic Entity <ROM> in library <work> (Architecture <gedrag>).
+	aantal_filters = 88
+	bit_lengte = 16
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/ROMgeheugen.vhd" line 41: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/ROMgeheugen.vhd" line 42: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/ROMgeheugen.vhd" line 43: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/ROMgeheugen.vhd" line 44: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/ROMgeheugen.vhd" line 45: Index value(s) does not match array range, simulation mismatch.
+Entity <ROM> analyzed. Unit <ROM> generated.
+
+Analyzing generic Entity <twoportrw_mem.1> in library <work> (Architecture <structure>).
+	ADDRESS_WIDTH = 7
+	DATA_WIDTH = 124
+	MEMORY_AMOUNT = 88
+    Set property "ram_style = block" for signal <r_memory>.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportrw_mem.vhdl" line 35: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportrw_mem.vhdl" line 37: Index value(s) does not match array range, simulation mismatch.
+Entity <twoportrw_mem.1> analyzed. Unit <twoportrw_mem.1> generated.
+
+Analyzing generic Entity <twoportrw_mem.2> in library <work> (Architecture <structure>).
+	ADDRESS_WIDTH = 7
+	DATA_WIDTH = 31
+	MEMORY_AMOUNT = 88
+    Set property "ram_style = block" for signal <r_memory>.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportrw_mem.vhdl" line 35: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportrw_mem.vhdl" line 37: Index value(s) does not match array range, simulation mismatch.
+Entity <twoportrw_mem.2> analyzed. Unit <twoportrw_mem.2> generated.
+
+Analyzing generic Entity <tweedeordefilter> in library <work> (Architecture <gedrag>).
+	aantal_filters = 88
+	bit_lengte = 31
+	rom_lengte = 16
+Entity <tweedeordefilter> analyzed. Unit <tweedeordefilter> generated.
+
+Analyzing generic Entity <RAM_AGC> in library <work> (Architecture <gedrag>).
+	aantal_filters = 88
+	bit_lengte = 31
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 62: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 63: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 64: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 65: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 67: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 68: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 69: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 70: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 72: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 73: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 74: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 75: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 79: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 80: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 81: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 82: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 84: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 85: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 86: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 87: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 89: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 90: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 91: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd" line 92: Index value(s) does not match array range, simulation mismatch.
+Entity <RAM_AGC> analyzed. Unit <RAM_AGC> generated.
+
+Analyzing generic Entity <AGC.1> in library <work> (Architecture <gedrag>).
+	aantal_filters = 88
+	bit_lengte = 31
+	fixed_point_bits = 32
+	g_epsilon = 0.000098
+	g_target = 0.003200
+Entity <AGC.1> analyzed. Unit <AGC.1> generated.
+
+Analyzing generic Entity <AGC.2> in library <work> (Architecture <gedrag>).
+	aantal_filters = 88
+	bit_lengte = 31
+	fixed_point_bits = 32
+	g_epsilon = 0.000391
+	g_target = 0.001600
+Entity <AGC.2> analyzed. Unit <AGC.2> generated.
+
+Analyzing generic Entity <AGC.3> in library <work> (Architecture <gedrag>).
+	aantal_filters = 88
+	bit_lengte = 31
+	fixed_point_bits = 32
+	g_epsilon = 0.001514
+	g_target = 0.000800
+Entity <AGC.3> analyzed. Unit <AGC.3> generated.
+
+Analyzing generic Entity <AGC.4> in library <work> (Architecture <gedrag>).
+	aantal_filters = 88
+	bit_lengte = 31
+	fixed_point_bits = 32
+	g_epsilon = 0.006230
+	g_target = 0.000400
+Entity <AGC.4> analyzed. Unit <AGC.4> generated.
+
+Analyzing generic Entity <delsig_mem> in library <work> (Architecture <impl>).
+	ADDRESS_WIDTH = 7
+	INPUT_WIDTH = 14
+	NB_INSTANCES = 88
+Entity <delsig_mem> analyzed. Unit <delsig_mem> generated.
+
+Analyzing generic Entity <oneport_mem> in library <work> (Architecture <structure>).
+	ADDRESS_WIDTH = 7
+	DATA_WIDTH = 15
+	MEMORY_AMOUNT = 88
+    Set property "ram_style = block" for signal <mem>.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/oneport_mem.vhdl" line 35: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/oneport_mem.vhdl" line 37: Index value(s) does not match array range, simulation mismatch.
+Entity <oneport_mem> analyzed. Unit <oneport_mem> generated.
+
+Analyzing generic Entity <twoportclk_switching_fast> in library <work> (Architecture <structure>).
+	ADDRESS_WIDTH = 7
+	DATA_WIDTH = 1
+	MEMORY_AMOUNT = 88
+Entity <twoportclk_switching_fast> analyzed. Unit <twoportclk_switching_fast> generated.
+
+Analyzing generic Entity <twoportclk_mem> in library <work> (Architecture <structure>).
+	ADDRESS_WIDTH = 8
+	DATA_WIDTH = 1
+	MEMORY_AMOUNT = 216
+    Set property "ram_style = block" for signal <r_memory>.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportclk_mem.vhdl" line 42: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportclk_mem.vhdl" line 44: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportclk_mem.vhdl" line 56: Index value(s) does not match array range, simulation mismatch.
+Entity <twoportclk_mem> analyzed. Unit <twoportclk_mem> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <FSM>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/FSM.vhd".
+    Register <adres_RAM_state_schrijf> equivalent to <adres_RAM_state_lees> has been removed
+    Found 7-bit register for signal <adres_RAM_state_lees>.
+    Found 7-bit register for signal <adres_RAM_Rstate_lees>.
+    Found 1-bit register for signal <clk_enable>.
+    Found 7-bit register for signal <adres_RAM_Lstate_lees>.
+    Found 1-bit register for signal <start_sample>.
+    Found 1-bit register for signal <write_enable>.
+    Found 7-bit subtractor for signal <adres_RAM_Lstate_lees$addsub0000> created at line 94.
+    Found 7-bit adder for signal <adres_RAM_Rstate_lees$addsub0000> created at line 95.
+    Found 32-bit register for signal <current_state>.
+    Found 32-bit register for signal <filterteller>.
+    Found 32-bit adder for signal <filterteller$addsub0000> created at line 111.
+    Found 32-bit adder for signal <next_state$addsub0000> created at line 52.
+    Found 1-bit register for signal <selectie>.
+    Summary:
+	inferred  50 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+Unit <FSM> synthesized.
+
+
+Synthesizing Unit <ADC_controller>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/ADC_controller.vhd".
+WARNING:Xst:646 - Signal <bitbuffer<17>> is assigned but never used.
+    Found 1-bit register for signal <SDATA_OUT>.
+    Found 1-bit register for signal <SYNC>.
+    Found 16-bit register for signal <DATA_output>.
+    Found 17-bit register for signal <bitbuffer<16:0>>.
+    Found 9-bit subtractor for signal <DATA_output$addsub0000> created at line 33.
+    Found 9-bit subtractor for signal <SDATA_OUT$addsub0000> created at line 39.
+    Found 8-bit comparator less for signal <SYNC$cmp_lt0000> created at line 55.
+    Found 9-bit up counter for signal <teller>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  35 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <ADC_controller> synthesized.
+
+
+Synthesizing Unit <MUL12>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/MUL12.vhd".
+Unit <MUL12> synthesized.
+
+
+Synthesizing Unit <ROM>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/ROMgeheugen.vhd".
+    Found 88x16-bit ROM for signal <A0$rom0000> created at line 41.
+    Found 88x16-bit ROM for signal <A1$rom0000> created at line 41.
+    Found 88x16-bit ROM for signal <A2$rom0000> created at line 41.
+    Found 88x16-bit ROM for signal <B0$rom0000> created at line 41.
+    Found 88x16-bit ROM for signal <B1$rom0000> created at line 41.
+    Found 16-bit register for signal <A0>.
+    Found 16-bit register for signal <A1>.
+    Found 16-bit register for signal <A2>.
+    Found 16-bit register for signal <B0>.
+    Found 16-bit register for signal <B1>.
+    Summary:
+	inferred   5 ROM(s).
+	inferred  80 D-type flip-flop(s).
+Unit <ROM> synthesized.
+
+
+Synthesizing Unit <twoportrw_mem_1>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportrw_mem.vhdl".
+    Found 88x124-bit dual-port RAM <Mram_r_memory> for signal <r_memory>.
+    Found 124-bit register for signal <d>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred 124 D-type flip-flop(s).
+Unit <twoportrw_mem_1> synthesized.
+
+
+Synthesizing Unit <twoportrw_mem_2>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportrw_mem.vhdl".
+    Found 88x31-bit dual-port RAM <Mram_r_memory> for signal <r_memory>.
+    Found 31-bit register for signal <d>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  31 D-type flip-flop(s).
+Unit <twoportrw_mem_2> synthesized.
+
+
+Synthesizing Unit <tweedeordefilter>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/tweedeordefilter.vhd".
+    Found 31x16-bit multiplier for signal <A0input$mux0000> created at line 64.
+    Found 47-bit adder for signal <y_n_optel$addsub0000> created at line 71.
+    Found 47-bit adder for signal <y_n_optel$addsub0001> created at line 71.
+    Found 47-bit subtractor for signal <y_n_optel$addsub0002> created at line 71.
+    Found 31x16-bit multiplier for signal <y_n_optel$mult0000> created at line 60.
+    Found 31x16-bit multiplier for signal <y_n_optel$mult0001> created at line 61.
+    Found 31x16-bit multiplier for signal <y_n_optel$mult0002> created at line 62.
+    Found 31x16-bit multiplier for signal <y_n_optel$mult0003> created at line 63.
+    Found 47-bit subtractor for signal <y_n_optel$sub0000> created at line 71.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred   5 Multiplier(s).
+Unit <tweedeordefilter> synthesized.
+
+
+Synthesizing Unit <RAM_AGC>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/RAM_AGC.vhd".
+    Found 88x31-bit dual-port RAM <Mram_Rstate1_rij> for signal <Rstate1_rij>.
+    Found 88x31-bit dual-port RAM <Mram_Rstate4_rij> for signal <Rstate4_rij>.
+    Found 88x31-bit dual-port RAM <Mram_Rstate3_rij> for signal <Rstate3_rij>.
+    Found 88x31-bit dual-port RAM <Mram_state1_rij> for signal <state1_rij>.
+    Found 88x31-bit dual-port RAM <Mram_Lstate2_rij> for signal <Lstate2_rij>.
+    Found 88x31-bit dual-port RAM <Mram_Lstate1_rij> for signal <Lstate1_rij>.
+    Found 88x31-bit dual-port RAM <Mram_state3_rij> for signal <state3_rij>.
+    Found 88x31-bit dual-port RAM <Mram_Lstate4_rij> for signal <Lstate4_rij>.
+    Found 88x31-bit dual-port RAM <Mram_state2_rij> for signal <state2_rij>.
+    Found 88x31-bit dual-port RAM <Mram_Lstate3_rij> for signal <Lstate3_rij>.
+    Found 88x31-bit dual-port RAM <Mram_state4_rij> for signal <state4_rij>.
+    Found 88x31-bit dual-port RAM <Mram_Rstate2_rij> for signal <Rstate2_rij>.
+    Found 31-bit register for signal <Rstate1>.
+    Found 31-bit register for signal <Rstate2>.
+    Found 31-bit register for signal <Rstate3>.
+    Found 31-bit register for signal <Rstate4>.
+    Found 31-bit register for signal <Lstate1>.
+    Found 31-bit register for signal <Lstate2>.
+    Found 31-bit register for signal <Lstate3>.
+    Found 31-bit register for signal <Lstate4>.
+    Found 31-bit register for signal <state1>.
+    Found 31-bit register for signal <state2>.
+    Found 31-bit register for signal <state3>.
+    Found 31-bit register for signal <state4>.
+    Summary:
+	inferred  12 RAM(s).
+	inferred 372 D-type flip-flop(s).
+Unit <RAM_AGC> synthesized.
+
+
+Synthesizing Unit <AGC_1>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/AGC.vhd".
+WARNING:Xst:646 - Signal <inputstate<30:0>> is assigned but never used.
+WARNING:Xst:646 - Signal <statebijhouden<31:0>> is assigned but never used.
+    Found 31x32-bit multiplier for signal <epsovertargethuidig>.
+    Found 31x32-bit multiplier for signal <epsovertargetvolgende>.
+    Found 31x32-bit multiplier for signal <epsovertargetvorige>.
+    Found 31x31-bit multiplier for signal <inputstate>.
+    Found 31-bit comparator greater for signal <newstate$cmp_gt0000> created at line 54.
+    Found 31-bit subtractor for signal <output_ff>.
+    Found 63-bit adder for signal <statebijhouden>.
+    Found 63-bit adder for signal <statebijhouden$addsub0000> created at line 51.
+    Found 63-bit adder for signal <statebijhouden$addsub0001> created at line 51.
+    Found 31x32-bit multiplier for signal <statebijhouden$mult0000> created at line 51.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred   5 Multiplier(s).
+	inferred   1 Comparator(s).
+Unit <AGC_1> synthesized.
+
+
+Synthesizing Unit <AGC_2>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/AGC.vhd".
+WARNING:Xst:646 - Signal <inputstate<30:0>> is assigned but never used.
+WARNING:Xst:646 - Signal <statebijhouden<31:0>> is assigned but never used.
+    Found 31x32-bit multiplier for signal <epsovertargethuidig>.
+    Found 31x32-bit multiplier for signal <epsovertargetvolgende>.
+    Found 31x32-bit multiplier for signal <epsovertargetvorige>.
+    Found 31x31-bit multiplier for signal <inputstate>.
+    Found 31-bit comparator greater for signal <newstate$cmp_gt0000> created at line 54.
+    Found 31-bit subtractor for signal <output_ff>.
+    Found 63-bit adder for signal <statebijhouden>.
+    Found 63-bit adder for signal <statebijhouden$addsub0000> created at line 51.
+    Found 63-bit adder for signal <statebijhouden$addsub0001> created at line 51.
+    Found 31x32-bit multiplier for signal <statebijhouden$mult0000> created at line 51.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred   5 Multiplier(s).
+	inferred   1 Comparator(s).
+Unit <AGC_2> synthesized.
+
+
+Synthesizing Unit <AGC_3>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/AGC.vhd".
+WARNING:Xst:646 - Signal <inputstate<30:0>> is assigned but never used.
+WARNING:Xst:646 - Signal <statebijhouden<31:0>> is assigned but never used.
+    Found 31x32-bit multiplier for signal <epsovertargethuidig>.
+    Found 31x32-bit multiplier for signal <epsovertargetvolgende>.
+    Found 31x32-bit multiplier for signal <epsovertargetvorige>.
+    Found 31x31-bit multiplier for signal <inputstate>.
+    Found 31-bit comparator greater for signal <newstate$cmp_gt0000> created at line 54.
+    Found 31-bit subtractor for signal <output_ff>.
+    Found 63-bit adder for signal <statebijhouden>.
+    Found 63-bit adder for signal <statebijhouden$addsub0000> created at line 51.
+    Found 63-bit adder for signal <statebijhouden$addsub0001> created at line 51.
+    Found 31x32-bit multiplier for signal <statebijhouden$mult0000> created at line 51.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred   5 Multiplier(s).
+	inferred   1 Comparator(s).
+Unit <AGC_3> synthesized.
+
+
+Synthesizing Unit <AGC_4>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/AGC.vhd".
+WARNING:Xst:646 - Signal <inputstate<30:0>> is assigned but never used.
+WARNING:Xst:646 - Signal <statebijhouden<31:0>> is assigned but never used.
+    Found 31x32-bit multiplier for signal <epsovertargethuidig>.
+    Found 31x32-bit multiplier for signal <epsovertargetvolgende>.
+    Found 31x32-bit multiplier for signal <epsovertargetvorige>.
+    Found 31x31-bit multiplier for signal <inputstate>.
+    Found 31-bit comparator greater for signal <newstate$cmp_gt0000> created at line 54.
+    Found 31-bit subtractor for signal <output_ff>.
+    Found 63-bit adder for signal <statebijhouden>.
+    Found 63-bit adder for signal <statebijhouden$addsub0000> created at line 51.
+    Found 63-bit adder for signal <statebijhouden$addsub0001> created at line 51.
+    Found 31x32-bit multiplier for signal <statebijhouden$mult0000> created at line 51.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred   5 Multiplier(s).
+	inferred   1 Comparator(s).
+Unit <AGC_4> synthesized.
+
+
+Synthesizing Unit <oneport_mem>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/oneport_mem.vhdl".
+    Found 88x15-bit single-port RAM <Mram_mem> for signal <mem>.
+    Found 15-bit register for signal <d>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  15 D-type flip-flop(s).
+Unit <oneport_mem> synthesized.
+
+
+Synthesizing Unit <twoportclk_mem>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportclk_mem.vhdl".
+    Found 216x1-bit dual-port RAM <Mram_r_memory> for signal <r_memory>.
+    Found 1-bit register for signal <d_1<0>>.
+    Found 1-bit register for signal <d_2<0>>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 D-type flip-flop(s).
+Unit <twoportclk_mem> synthesized.
+
+
+Synthesizing Unit <delsig_mem>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/delsig_mem.vhdl".
+    Found 15-bit adder for signal <data_out>.
+    Found 15-bit adder for signal <val>.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+Unit <delsig_mem> synthesized.
+
+
+Synthesizing Unit <twoportclk_switching_fast>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/twoportclk_switching_fast.vhdl".
+    Found 1-bit register for signal <address_switch>.
+    Found 1-bit register for signal <switch_old>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <twoportclk_switching_fast> synthesized.
+
+
+Synthesizing Unit <schakeling>.
+    Related source file is "/home/mdhaene/SpikingNN/trunk/Hardware/NIPSdemo/earmodel/schakeling.vhd".
+WARNING:Xst:646 - Signal <input_ADC> is assigned but never used.
+WARNING:Xst:646 - Signal <output_agc4<30:29>> is assigned but never used.
+WARNING:Xst:646 - Signal <output_agc4<14:0>> is assigned but never used.
+WARNING:Xst:646 - Signal <signed_output_agc4<14>> is assigned but never used.
+    Found 7-bit adder for signal <s_spike_addr>.
+    Found 15-bit adder for signal <signed_output_agc4>.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+Unit <schakeling> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 28
+ 216x1-bit dual-port RAM                               : 1
+ 88x124-bit dual-port RAM                              : 1
+ 88x15-bit single-port RAM                             : 1
+ 88x31-bit dual-port RAM                               : 25
+# ROMs                                                 : 5
+ 88x16-bit ROM                                         : 5
+# Multipliers                                          : 25
+ 31x16-bit multiplier                                  : 5
+ 31x31-bit multiplier                                  : 4
+ 31x32-bit multiplier                                  : 16
+# Adders/Subtractors                                   : 30
+ 15-bit adder                                          : 3
+ 31-bit subtractor                                     : 4
+ 32-bit adder                                          : 2
+ 47-bit adder                                          : 2
+ 47-bit subtractor                                     : 2
+ 63-bit adder                                          : 12
+ 7-bit adder                                           : 2
+ 7-bit subtractor                                      : 1
+ 9-bit subtractor                                      : 2
+# Counters                                             : 1
+ 9-bit up counter                                      : 1
+# Registers                                            : 65
+ 1-bit register                                        : 27
+ 124-bit register                                      : 1
+ 15-bit register                                       : 1
+ 16-bit register                                       : 6
+ 31-bit register                                       : 25
+ 32-bit register                                       : 2
+ 7-bit register                                        : 3
+# Comparators                                          : 5
+ 31-bit comparator greater                             : 4
+ 8-bit comparator less                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file '4vsx35.nph' in environment /ecad/xilinxise_9.1.
+INFO:Xst:2691 - Unit <twoportrw_mem_1> : The RAM <Mram_r_memory> will be implemented as a BLOCK RAM, absorbing the following register(s): <d>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 124-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <we_0>          | high     |
+    |     addrA          | connected to signal <address_w>     |          |
+    |     diA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 124-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <ce>            | high     |
+    |     addrB          | connected to signal <address_r>     |          |
+    |     doB            | connected to signal <d>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <twoportrw_mem_2> : The RAM <Mram_r_memory> will be implemented as a BLOCK RAM, absorbing the following register(s): <d>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <we_0>          | high     |
+    |     addrA          | connected to signal <address_w>     |          |
+    |     diA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <ce>            | high     |
+    |     addrB          | connected to signal <address_r>     |          |
+    |     doB            | connected to signal <d>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <oneport_mem> : The RAM <Mram_mem> will be implemented as a BLOCK RAM, absorbing the following register(s): <d>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 15-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     enA            | connected to signal <ce>            | high     |
+    |     weA            | connected to signal <we>            | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <q>             |          |
+    |     doA            | connected to signal <d>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <twoportclk_mem> : The RAM <Mram_r_memory> will be implemented as a BLOCK RAM, absorbing the following register(s): <d_1_0> <d_2_0>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 216-word x 1-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk_1>         | rise     |
+    |     weA            | connected to signal <we_1>          | high     |
+    |     addrA          | connected to signal <address_1>     |          |
+    |     diA            | connected to signal <q_1>           |          |
+    |     doA            | connected to signal <d_1>           |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 216-word x 1-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk_2>         | rise     |
+    |     addrB          | connected to signal <address_2>     |          |
+    |     doB            | connected to signal <d_2>           |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <RAM_AGC> : The RAM <Mram_Rstate4_rij> will be implemented as a BLOCK RAM, absorbing the following register(s): <Rstate4>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_1>    | high     |
+    |     addrA          | connected to signal <adres_RAM_state_schrijf> |          |
+    |     diA            | connected to signal <new_state4>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <geheugen_enable> | high     |
+    |     addrB          | connected to signal <adres_RAM_Rstate_lees> |          |
+    |     doB            | connected to signal <Rstate4>       |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <RAM_AGC> : The RAM <Mram_Rstate1_rij> will be implemented as a BLOCK RAM, absorbing the following register(s): <Rstate1>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_0>    | high     |
+    |     addrA          | connected to signal <adres_RAM_state_schrijf> |          |
+    |     diA            | connected to signal <new_state1>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <geheugen_enable> | high     |
+    |     addrB          | connected to signal <adres_RAM_Rstate_lees> |          |
+    |     doB            | connected to signal <Rstate1>       |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <RAM_AGC> : The RAM <Mram_Rstate3_rij> will be implemented as a BLOCK RAM, absorbing the following register(s): <Rstate3>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_2>    | high     |
+    |     addrA          | connected to signal <adres_RAM_state_schrijf> |          |
+    |     diA            | connected to signal <new_state3>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <geheugen_enable> | high     |
+    |     addrB          | connected to signal <adres_RAM_Rstate_lees> |          |
+    |     doB            | connected to signal <Rstate3>       |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <RAM_AGC> : The RAM <Mram_Lstate2_rij> will be implemented as a BLOCK RAM, absorbing the following register(s): <Lstate2>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_4>    | high     |
+    |     addrA          | connected to signal <adres_RAM_state_schrijf> |          |
+    |     diA            | connected to signal <new_state2>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <geheugen_enable> | high     |
+    |     addrB          | connected to signal <adres_RAM_Lstate_lees> |          |
+    |     doB            | connected to signal <Lstate2>       |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <RAM_AGC> : The RAM <Mram_state1_rij> will be implemented as a BLOCK RAM, absorbing the following register(s): <state1>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_3>    | high     |
+    |     addrA          | connected to signal <adres_RAM_state_schrijf> |          |
+    |     diA            | connected to signal <new_state1>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <geheugen_enable> | high     |
+    |     addrB          | connected to signal <adres_RAM_state_lees> |          |
+    |     doB            | connected to signal <state1>        |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <RAM_AGC> : The RAM <Mram_Lstate1_rij> will be implemented as a BLOCK RAM, absorbing the following register(s): <Lstate1>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_5>    | high     |
+    |     addrA          | connected to signal <adres_RAM_state_schrijf> |          |
+    |     diA            | connected to signal <new_state1>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <geheugen_enable> | high     |
+    |     addrB          | connected to signal <adres_RAM_Lstate_lees> |          |
+    |     doB            | connected to signal <Lstate1>       |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <RAM_AGC> : The RAM <Mram_Lstate4_rij> will be implemented as a BLOCK RAM, absorbing the following register(s): <Lstate4>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_7>    | high     |
+    |     addrA          | connected to signal <adres_RAM_state_schrijf> |          |
+    |     diA            | connected to signal <new_state4>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <geheugen_enable> | high     |
+    |     addrB          | connected to signal <adres_RAM_Lstate_lees> |          |
+    |     doB            | connected to signal <Lstate4>       |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <RAM_AGC> : The RAM <Mram_state3_rij> will be implemented as a BLOCK RAM, absorbing the following register(s): <state3>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_6>    | high     |
+    |     addrA          | connected to signal <adres_RAM_state_schrijf> |          |
+    |     diA            | connected to signal <new_state3>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <geheugen_enable> | high     |
+    |     addrB          | connected to signal <adres_RAM_state_lees> |          |
+    |     doB            | connected to signal <state3>        |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <RAM_AGC> : The RAM <Mram_state2_rij> will be implemented as a BLOCK RAM, absorbing the following register(s): <state2>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_8>    | high     |
+    |     addrA          | connected to signal <adres_RAM_state_schrijf> |          |
+    |     diA            | connected to signal <new_state2>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <geheugen_enable> | high     |
+    |     addrB          | connected to signal <adres_RAM_state_lees> |          |
+    |     doB            | connected to signal <state2>        |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <RAM_AGC> : The RAM <Mram_state4_rij> will be implemented as a BLOCK RAM, absorbing the following register(s): <state4>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_10>   | high     |
+    |     addrA          | connected to signal <adres_RAM_state_schrijf> |          |
+    |     diA            | connected to signal <new_state4>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <geheugen_enable> | high     |
+    |     addrB          | connected to signal <adres_RAM_state_lees> |          |
+    |     doB            | connected to signal <state4>        |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <RAM_AGC> : The RAM <Mram_Lstate3_rij> will be implemented as a BLOCK RAM, absorbing the following register(s): <Lstate3>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_9>    | high     |
+    |     addrA          | connected to signal <adres_RAM_state_schrijf> |          |
+    |     diA            | connected to signal <new_state3>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <geheugen_enable> | high     |
+    |     addrB          | connected to signal <adres_RAM_Lstate_lees> |          |
+    |     doB            | connected to signal <Lstate3>       |          |
+    -----------------------------------------------------------------------
+INFO:Xst:2691 - Unit <RAM_AGC> : The RAM <Mram_Rstate2_rij> will be implemented as a BLOCK RAM, absorbing the following register(s): <Rstate2>.
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_and0000_11>   | high     |
+    |     addrA          | connected to signal <adres_RAM_state_schrijf> |          |
+    |     diA            | connected to signal <new_state2>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 88-word x 31-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <geheugen_enable> | high     |
+    |     addrB          | connected to signal <adres_RAM_Rstate_lees> |          |
+    |     doB            | connected to signal <Rstate2>       |          |
+    -----------------------------------------------------------------------
+
+Synthesizing (advanced) Unit <schakeling>.
+	Found pipelined multiplier on signal <filter/y_n_optel_mult0003>:
+		- 1 pipeline level(s) found in a register on signal <B1>.
+		Pushing register(s) into the multiplier macro.
+	Found pipelined multiplier on signal <filter/y_n_optel_mult0002>:
+		- 1 pipeline level(s) found in a register on signal <B0>.
+		Pushing register(s) into the multiplier macro.
+	Found pipelined multiplier on signal <filter/y_n_optel_mult0001>:
+		- 1 pipeline level(s) found in a register on signal <A2>.
+		Pushing register(s) into the multiplier macro.
+	Found pipelined multiplier on signal <filter/y_n_optel_mult0000>:
+		- 1 pipeline level(s) found in a register on signal <A1>.
+		Pushing register(s) into the multiplier macro.
+	Found pipelined multiplier on signal <filter/A0input_mux0000>:
+		- 1 pipeline level(s) found in a register on signal <A0>.
+		Pushing register(s) into the multiplier macro.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier filter/Mmult_y_n_optel_mult0003 by adding 3 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier filter/Mmult_y_n_optel_mult0002 by adding 3 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier filter/Mmult_y_n_optel_mult0001 by adding 3 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier filter/Mmult_y_n_optel_mult0000 by adding 3 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier filter/Mmult_A0input_mux0000 by adding 3 register level(s).
+Unit <schakeling> synthesized (advanced).
+
+Synthesizing (advanced) Unit <tweedeordefilter>.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_A0input_mux0000 by adding 3 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_y_n_optel_mult0000 by adding 3 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_y_n_optel_mult0001 by adding 3 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_y_n_optel_mult0002 by adding 3 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_y_n_optel_mult0003 by adding 3 register level(s).
+Unit <tweedeordefilter> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 28
+ 216x1-bit dual-port block RAM                         : 1
+ 88x124-bit dual-port block RAM                        : 1
+ 88x15-bit single-port block RAM                       : 1
+ 88x31-bit dual-port block RAM                         : 25
+# ROMs                                                 : 5
+ 88x16-bit ROM                                         : 5
+# Multipliers                                          : 25
+ 31x16-bit registered multiplier                       : 5
+ 31x31-bit multiplier                                  : 4
+ 31x32-bit multiplier                                  : 16
+# Adders/Subtractors                                   : 30
+ 14-bit adder                                          : 1
+ 15-bit adder                                          : 2
+ 31-bit subtractor                                     : 4
+ 32-bit adder                                          : 2
+ 45-bit adder                                          : 1
+ 45-bit subtractor                                     : 2
+ 47-bit adder                                          : 1
+ 63-bit adder                                          : 12
+ 7-bit adder                                           : 2
+ 7-bit subtractor                                      : 1
+ 9-bit subtractor                                      : 2
+# Counters                                             : 1
+ 9-bit up counter                                      : 1
+# Registers                                            : 126
+ Flip-Flops                                            : 126
+# Comparators                                          : 5
+ 31-bit comparator greater                             : 4
+ 8-bit comparator less                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <schakeling> ...
+
+Optimizing unit <ADC_controller> ...
+
+Optimizing unit <AGC_1> ...
+
+Optimizing unit <AGC_2> ...
+
+Optimizing unit <AGC_3> ...
+
+Optimizing unit <AGC_4> ...
+
+Optimizing unit <FSM> ...
+WARNING:Xst:2677 - Node <ADC/DATA_output_15> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_14> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_13> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_12> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_11> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_10> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_9> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_8> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_7> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_6> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_5> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_4> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_3> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_2> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_1> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/DATA_output_0> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_16> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_15> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_14> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_13> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_12> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_11> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_10> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_9> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_8> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_7> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_6> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_5> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_4> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_3> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_2> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_1> of sequential type is unconnected in block <schakeling>.
+WARNING:Xst:2677 - Node <ADC/bitbuffer_0> of sequential type is unconnected in block <schakeling>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+FlipFlop fsm/start_sample has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 104
+ Flip-Flops                                            : 104
+
+=========================================================================
+
+=========================================================================
+*                          Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+Top Level Output File Name         : schakeling.ngc
+Output Format                      : ngc
+Optimization Goal                  : speed
+Keep Hierarchy                     : no
+
+Design Statistics
+# IOs                              : 23
+
+Cell Usage :
+# BELS                             : 4361
+#      GND                         : 1
+#      INV                         : 25
+#      LUT1                        : 75
+#      LUT2                        : 796
+#      LUT3                        : 923
+#      LUT4                        : 764
+#      MUXCY                       : 936
+#      MUXF5                       : 108
+#      VCC                         : 1
+#      XORCY                       : 732
+# FlipFlops/Latches                : 104
+#      FD                          : 10
+#      FDC                         : 65
+#      FDCE                        : 25
+#      FDP                         : 2
+#      FDPE                        : 1
+#      FDR                         : 1
+# RAMS                             : 31
+#      RAMB16                      : 31
+# DSPs                             : 90
+#      DSP48                       : 90
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 4vsx35ff668-10 
+
+ Number of Slices:                    1396  out of  15360     9%  
+ Number of Slice Flip Flops:           104  out of  30720     0%  
+ Number of 4 input LUTs:              2583  out of  30720     8%  
+ Number of IOs:                         23
+ Number of bonded IOBs:                  0  out of    448     0%  
+ Number of FIFO16/RAMB16s:              31  out of    192    16%  
+    Number used as RAMB16s:             31
+ Number of DSP48s:                      90  out of    192    46%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                     | Load  |
+-----------------------------------+-------------------------------------------+-------+
+clk                                | NONE(RAM_AGCB/Mram_state2_rij)            | 140   |
+spike_clk                          | NONE(spike_out_mem/blockram/Mram_r_memory)| 1     |
+-----------------------------------+-------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | NONE                   | 93    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -10
+
+   Minimum period: 98.956ns (Maximum Frequency: 10.105MHz)
+   Minimum input arrival time before clock: 94.298ns
+   Maximum output required time after clock: 2.100ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 98.956ns (frequency: 10.105MHz)
+  Total number of paths / destination ports: 150922302047168665664400031550572732449535071092736 / 1707
+-------------------------------------------------------------------------
+Delay:               98.956ns (Levels of Logic = 191)
+  Source:            ram_2/Mram_r_memory (RAM)
+  Destination:       RAM_AGCB/Mram_state4_rij (RAM)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: ram_2/Mram_r_memory to RAM_AGCB/Mram_state4_rij
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16:CLKB->DOB16    1   2.100   0.688  ram_2/Mram_r_memory (yn_lees_in<16>)
+     LUT2:I1->O            2   0.195   0.377  filter/xn1_schrijf_weg<16>1 (xn1_schrijf_weg<16>)
+     DSP48:A16->PCOUT47    1   4.403   0.000  filter/Mmult_A0input_mux0000 (filter/Mmult_A0input_mux0000_PCOUT_to_filter/Mmult_A0input_mux00001_PCIN_47)
+     DSP48:PCIN47->P0      1   2.270   0.688  filter/Mmult_A0input_mux00001 (filter/A0input_mux0000<17>)
+     LUT2:I1->O            1   0.195   0.000  filter/Madd_y_n_optel_addsub0000_lut<17> (N107)
+     MUXCY:S->O            1   0.366   0.000  filter/Madd_y_n_optel_addsub0000_cy<17> (filter/Madd_y_n_optel_addsub0000_cy<17>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<18> (filter/Madd_y_n_optel_addsub0000_cy<18>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<19> (filter/Madd_y_n_optel_addsub0000_cy<19>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<20> (filter/Madd_y_n_optel_addsub0000_cy<20>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<21> (filter/Madd_y_n_optel_addsub0000_cy<21>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<22> (filter/Madd_y_n_optel_addsub0000_cy<22>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<23> (filter/Madd_y_n_optel_addsub0000_cy<23>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<24> (filter/Madd_y_n_optel_addsub0000_cy<24>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<25> (filter/Madd_y_n_optel_addsub0000_cy<25>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<26> (filter/Madd_y_n_optel_addsub0000_cy<26>)
+     XORCY:CI->O           1   0.360   0.688  filter/Madd_y_n_optel_addsub0000_xor<27> (filter/y_n_optel_addsub0000<27>)
+     LUT2:I1->O            1   0.195   0.000  filter/Madd_y_n_optel_addsub0001_Madd_lut<27> (N164)
+     MUXCY:S->O            1   0.366   0.000  filter/Madd_y_n_optel_addsub0001_Madd_cy<27> (filter/Madd_y_n_optel_addsub0001_Madd_cy<27>)
+     XORCY:CI->O           1   0.360   0.688  filter/Madd_y_n_optel_addsub0001_Madd_xor<28> (filter/y_n_optel_addsub0001<28>)
+     LUT2:I1->O            1   0.195   0.000  filter/Msub_y_n_optel_addsub0002_Madd_lut<28> (N210)
+     MUXCY:S->O            1   0.366   0.000  filter/Msub_y_n_optel_addsub0002_Madd_cy<28> (filter/Msub_y_n_optel_addsub0002_Madd_cy<28>)
+     XORCY:CI->O           1   0.360   0.688  filter/Msub_y_n_optel_addsub0002_Madd_xor<29> (filter/y_n_optel_addsub0002<29>)
+     LUT2:I1->O            1   0.195   0.000  filter/Msub_y_n_optel_sub0000_Madd_lut<29> (N2561)
+     MUXCY:S->O            1   0.366   0.000  filter/Msub_y_n_optel_sub0000_Madd_cy<29> (filter/Msub_y_n_optel_sub0000_Madd_cy<29>)
+     XORCY:CI->O           5   0.360   0.383  filter/Msub_y_n_optel_sub0000_Madd_xor<30> (yn1_schrijf_weg<16>)
+     DSP48:A16->PCOUT47    1   4.403   0.000  agc1/Mmult_inputstate (agc1/Mmult_inputstate_PCOUT_to_Mmult_inputstate1_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc1/Mmult_inputstate1 (agc1/Mmult_inputstate1_PCOUT_to_Mmult_inputstate2_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc1/Mmult_inputstate2 (agc1/Mmult_inputstate2_PCOUT_to_Mmult_inputstate3_PCIN_47)
+     DSP48:PCIN47->P0      1   2.270   0.688  agc1/Mmult_inputstate3 (agc1/inputstate<34>)
+     LUT2:I1->O            1   0.195   0.000  agc1/Msub_output_ff_lut<3> (agc1/N8)
+     MUXCY:S->O            1   0.366   0.000  agc1/Msub_output_ff_cy<3> (agc1/Msub_output_ff_cy<3>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<4> (agc1/Msub_output_ff_cy<4>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<5> (agc1/Msub_output_ff_cy<5>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<6> (agc1/Msub_output_ff_cy<6>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<7> (agc1/Msub_output_ff_cy<7>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<8> (agc1/Msub_output_ff_cy<8>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<9> (agc1/Msub_output_ff_cy<9>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<10> (agc1/Msub_output_ff_cy<10>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<11> (agc1/Msub_output_ff_cy<11>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<12> (agc1/Msub_output_ff_cy<12>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<13> (agc1/Msub_output_ff_cy<13>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<14> (agc1/Msub_output_ff_cy<14>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<15> (agc1/Msub_output_ff_cy<15>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<16> (agc1/Msub_output_ff_cy<16>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<17> (agc1/Msub_output_ff_cy<17>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<18> (agc1/Msub_output_ff_cy<18>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<19> (agc1/Msub_output_ff_cy<19>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<20> (agc1/Msub_output_ff_cy<20>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<21> (agc1/Msub_output_ff_cy<21>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<22> (agc1/Msub_output_ff_cy<22>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<23> (agc1/Msub_output_ff_cy<23>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<24> (agc1/Msub_output_ff_cy<24>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<25> (agc1/Msub_output_ff_cy<25>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<26> (agc1/Msub_output_ff_cy<26>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<27> (agc1/Msub_output_ff_cy<27>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<28> (agc1/Msub_output_ff_cy<28>)
+     MUXCY:CI->O           0   0.045   0.000  agc1/Msub_output_ff_cy<29> (agc1/Msub_output_ff_cy<29>)
+     XORCY:CI->O          59   0.360   1.361  agc1/Msub_output_ff_xor<30> (agc1/output_ff<30>)
+     LUT2:I1->O            5   0.195   0.383  agc1/HWR<0>1 (output_agc1<0>)
+     DSP48:A0->PCOUT47     1   4.403   0.000  agc2/Mmult_inputstate (agc2/Mmult_inputstate_PCOUT_to_Mmult_inputstate1_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc2/Mmult_inputstate1 (agc2/Mmult_inputstate1_PCOUT_to_Mmult_inputstate2_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc2/Mmult_inputstate2 (agc2/Mmult_inputstate2_PCOUT_to_Mmult_inputstate3_PCIN_47)
+     DSP48:PCIN47->P0      1   2.270   0.585  agc2/Mmult_inputstate3 (agc2/inputstate<34>)
+     LUT3:I2->O            1   0.195   0.000  agc2/Msub_output_ff_lut<3> (agc2/N8)
+     MUXCY:S->O            1   0.366   0.000  agc2/Msub_output_ff_cy<3> (agc2/Msub_output_ff_cy<3>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<4> (agc2/Msub_output_ff_cy<4>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<5> (agc2/Msub_output_ff_cy<5>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<6> (agc2/Msub_output_ff_cy<6>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<7> (agc2/Msub_output_ff_cy<7>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<8> (agc2/Msub_output_ff_cy<8>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<9> (agc2/Msub_output_ff_cy<9>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<10> (agc2/Msub_output_ff_cy<10>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<11> (agc2/Msub_output_ff_cy<11>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<12> (agc2/Msub_output_ff_cy<12>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<13> (agc2/Msub_output_ff_cy<13>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<14> (agc2/Msub_output_ff_cy<14>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<15> (agc2/Msub_output_ff_cy<15>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<16> (agc2/Msub_output_ff_cy<16>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<17> (agc2/Msub_output_ff_cy<17>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<18> (agc2/Msub_output_ff_cy<18>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<19> (agc2/Msub_output_ff_cy<19>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<20> (agc2/Msub_output_ff_cy<20>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<21> (agc2/Msub_output_ff_cy<21>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<22> (agc2/Msub_output_ff_cy<22>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<23> (agc2/Msub_output_ff_cy<23>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<24> (agc2/Msub_output_ff_cy<24>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<25> (agc2/Msub_output_ff_cy<25>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<26> (agc2/Msub_output_ff_cy<26>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<27> (agc2/Msub_output_ff_cy<27>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<28> (agc2/Msub_output_ff_cy<28>)
+     MUXCY:CI->O           0   0.044   0.000  agc2/Msub_output_ff_cy<29> (agc2/Msub_output_ff_cy<29>)
+     XORCY:CI->O          59   0.360   1.361  agc2/Msub_output_ff_xor<30> (agc2/output_ff<30>)
+     LUT2:I1->O            5   0.195   0.383  agc2/HWR<0>1 (output_agc2<0>)
+     DSP48:A0->PCOUT47     1   4.403   0.000  agc3/Mmult_inputstate (agc3/Mmult_inputstate_PCOUT_to_Mmult_inputstate1_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc3/Mmult_inputstate1 (agc3/Mmult_inputstate1_PCOUT_to_Mmult_inputstate2_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc3/Mmult_inputstate2 (agc3/Mmult_inputstate2_PCOUT_to_Mmult_inputstate3_PCIN_47)
+     DSP48:PCIN47->P0      1   2.270   0.585  agc3/Mmult_inputstate3 (agc3/inputstate<34>)
+     LUT3:I2->O            1   0.195   0.000  agc3/Msub_output_ff_lut<3> (agc3/N8)
+     MUXCY:S->O            1   0.366   0.000  agc3/Msub_output_ff_cy<3> (agc3/Msub_output_ff_cy<3>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<4> (agc3/Msub_output_ff_cy<4>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<5> (agc3/Msub_output_ff_cy<5>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<6> (agc3/Msub_output_ff_cy<6>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<7> (agc3/Msub_output_ff_cy<7>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<8> (agc3/Msub_output_ff_cy<8>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<9> (agc3/Msub_output_ff_cy<9>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<10> (agc3/Msub_output_ff_cy<10>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<11> (agc3/Msub_output_ff_cy<11>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<12> (agc3/Msub_output_ff_cy<12>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<13> (agc3/Msub_output_ff_cy<13>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<14> (agc3/Msub_output_ff_cy<14>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<15> (agc3/Msub_output_ff_cy<15>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<16> (agc3/Msub_output_ff_cy<16>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<17> (agc3/Msub_output_ff_cy<17>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<18> (agc3/Msub_output_ff_cy<18>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<19> (agc3/Msub_output_ff_cy<19>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<20> (agc3/Msub_output_ff_cy<20>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<21> (agc3/Msub_output_ff_cy<21>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<22> (agc3/Msub_output_ff_cy<22>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<23> (agc3/Msub_output_ff_cy<23>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<24> (agc3/Msub_output_ff_cy<24>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<25> (agc3/Msub_output_ff_cy<25>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<26> (agc3/Msub_output_ff_cy<26>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<27> (agc3/Msub_output_ff_cy<27>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<28> (agc3/Msub_output_ff_cy<28>)
+     MUXCY:CI->O           0   0.044   0.000  agc3/Msub_output_ff_cy<29> (agc3/Msub_output_ff_cy<29>)
+     XORCY:CI->O          59   0.360   1.361  agc3/Msub_output_ff_xor<30> (agc3/output_ff<30>)
+     LUT2:I1->O            5   0.195   0.383  agc3/HWR<0>1 (output_agc3<0>)
+     DSP48:A0->PCOUT47     1   4.403   0.000  agc4/Mmult_inputstate (agc4/Mmult_inputstate_PCOUT_to_Mmult_inputstate1_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc4/Mmult_inputstate1 (agc4/Mmult_inputstate1_PCOUT_to_Mmult_inputstate2_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc4/Mmult_inputstate2 (agc4/Mmult_inputstate2_PCOUT_to_Mmult_inputstate3_PCIN_47)
+     DSP48:PCIN47->P0      1   2.270   0.585  agc4/Mmult_inputstate3 (agc4/inputstate<34>)
+     LUT3:I2->O            1   0.195   0.000  agc4/Msub_output_ff_lut<3> (agc4/N8)
+     MUXCY:S->O            1   0.366   0.000  agc4/Msub_output_ff_cy<3> (agc4/Msub_output_ff_cy<3>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<4> (agc4/Msub_output_ff_cy<4>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<5> (agc4/Msub_output_ff_cy<5>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<6> (agc4/Msub_output_ff_cy<6>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<7> (agc4/Msub_output_ff_cy<7>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<8> (agc4/Msub_output_ff_cy<8>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<9> (agc4/Msub_output_ff_cy<9>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<10> (agc4/Msub_output_ff_cy<10>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<11> (agc4/Msub_output_ff_cy<11>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<12> (agc4/Msub_output_ff_cy<12>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<13> (agc4/Msub_output_ff_cy<13>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<14> (agc4/Msub_output_ff_cy<14>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<15> (agc4/Msub_output_ff_cy<15>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<16> (agc4/Msub_output_ff_cy<16>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<17> (agc4/Msub_output_ff_cy<17>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<18> (agc4/Msub_output_ff_cy<18>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<19> (agc4/Msub_output_ff_cy<19>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<20> (agc4/Msub_output_ff_cy<20>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<21> (agc4/Msub_output_ff_cy<21>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<22> (agc4/Msub_output_ff_cy<22>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<23> (agc4/Msub_output_ff_cy<23>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<24> (agc4/Msub_output_ff_cy<24>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<25> (agc4/Msub_output_ff_cy<25>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<26> (agc4/Msub_output_ff_cy<26>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<27> (agc4/Msub_output_ff_cy<27>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<28> (agc4/Msub_output_ff_cy<28>)
+     MUXCY:CI->O           0   0.045   0.000  agc4/Msub_output_ff_cy<29> (agc4/Msub_output_ff_cy<29>)
+     XORCY:CI->O          44   0.360   1.303  agc4/Msub_output_ff_xor<30> (agc4/output_ff<30>)
+     LUT2:I1->O            2   0.195   0.377  agc4/HWR<9>1 (agc4/output<9>)
+     DSP48:A9->PCOUT47     1   4.403   0.000  agc4/Mmult_statebijhouden_mult0000 (agc4/Mmult_statebijhouden_mult0000_PCOUT_to_Mmult_statebijhouden_mult00001_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc4/Mmult_statebijhouden_mult00001 (agc4/Mmult_statebijhouden_mult00001_PCOUT_to_Mmult_statebijhouden_mult00002_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc4/Mmult_statebijhouden_mult00002 (agc4/Mmult_statebijhouden_mult00002_PCOUT_to_Mmult_statebijhouden_mult00003_PCIN_47)
+     DSP48:PCIN47->P0      1   2.270   0.688  agc4/Mmult_statebijhouden_mult00003 (agc4/statebijhouden_mult0000<34>)
+     LUT2:I1->O            1   0.195   0.000  agc4/Madd_statebijhouden_lut<38> (agc4/N132)
+     MUXCY:S->O            1   0.366   0.000  agc4/Madd_statebijhouden_cy<38> (agc4/Madd_statebijhouden_cy<38>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<39> (agc4/Madd_statebijhouden_cy<39>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<40> (agc4/Madd_statebijhouden_cy<40>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<41> (agc4/Madd_statebijhouden_cy<41>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<42> (agc4/Madd_statebijhouden_cy<42>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<43> (agc4/Madd_statebijhouden_cy<43>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<44> (agc4/Madd_statebijhouden_cy<44>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<45> (agc4/Madd_statebijhouden_cy<45>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<46> (agc4/Madd_statebijhouden_cy<46>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<47> (agc4/Madd_statebijhouden_cy<47>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<48> (agc4/Madd_statebijhouden_cy<48>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<49> (agc4/Madd_statebijhouden_cy<49>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<50> (agc4/Madd_statebijhouden_cy<50>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<51> (agc4/Madd_statebijhouden_cy<51>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<52> (agc4/Madd_statebijhouden_cy<52>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<53> (agc4/Madd_statebijhouden_cy<53>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<54> (agc4/Madd_statebijhouden_cy<54>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<55> (agc4/Madd_statebijhouden_cy<55>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<56> (agc4/Madd_statebijhouden_cy<56>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<57> (agc4/Madd_statebijhouden_cy<57>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<58> (agc4/Madd_statebijhouden_cy<58>)
+     XORCY:CI->O           2   0.360   0.758  agc4/Madd_statebijhouden_xor<59> (agc4/statebijhouden<59>)
+     LUT3:I0->O            1   0.195   0.000  agc4/Mcompar_newstate_cmp_gt0000_lut<12> (agc4/N168)
+     MUXCY:S->O            1   0.366   0.000  agc4/Mcompar_newstate_cmp_gt0000_cy<12> (agc4/Mcompar_newstate_cmp_gt0000_cy<12>)
+     MUXCY:CI->O          31   0.369   1.252  agc4/Mcompar_newstate_cmp_gt0000_cy<13> (agc4/Mcompar_newstate_cmp_gt0000_cy<13>)
+     LUT2:I1->O            6   0.195   0.397  agc4/newstate<30>1 (new_state4<30>)
+     RAMB16:DIA30              0.230          RAM_AGCB/Mram_state4_rij
+    ----------------------------------------
+    Total                     98.956ns (82.306ns logic, 16.650ns route)
+                                       (83.2% logic, 16.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'spike_clk'
+  Total number of paths / destination ports: 22 / 7
+-------------------------------------------------------------------------
+Offset:              2.315ns (Levels of Logic = 2)
+  Source:            spike_addr<3> (PAD)
+  Destination:       spike_out_mem/blockram/Mram_r_memory (RAM)
+  Destination Clock: spike_clk rising
+
+  Data Path: spike_addr<3> to spike_out_mem/blockram/Mram_r_memory
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LUT3:I0->O            2   0.195   0.758  Madd_s_spike_addr_xor<3>111 (N2362)
+     LUT3:I0->O            1   0.195   0.360  Madd_s_spike_addr_xor<5>11 (s_spike_addr<5>)
+     RAMB16:ADDRB6             0.426          spike_out_mem/blockram/Mram_r_memory
+    ----------------------------------------
+    Total                      2.315ns (1.197ns logic, 1.118ns route)
+                                       (51.7% logic, 48.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 594289143073129156467474658146939172063295832064 / 826
+-------------------------------------------------------------------------
+Offset:              94.298ns (Levels of Logic = 190)
+  Source:            adc_data<7> (PAD)
+  Destination:       RAM_AGCB/Mram_state4_rij (RAM)
+  Destination Clock: clk rising
+
+  Data Path: adc_data<7> to RAM_AGCB/Mram_state4_rij
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LUT3:I0->O            6   0.195   0.397  filter/xn1_schrijf_weg<30>1 (xn1_schrijf_weg<30>)
+     DSP48:A13->P0         1   4.402   0.688  filter/Mmult_A0input_mux00001 (filter/A0input_mux0000<17>)
+     LUT2:I1->O            1   0.195   0.000  filter/Madd_y_n_optel_addsub0000_lut<17> (N107)
+     MUXCY:S->O            1   0.366   0.000  filter/Madd_y_n_optel_addsub0000_cy<17> (filter/Madd_y_n_optel_addsub0000_cy<17>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<18> (filter/Madd_y_n_optel_addsub0000_cy<18>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<19> (filter/Madd_y_n_optel_addsub0000_cy<19>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<20> (filter/Madd_y_n_optel_addsub0000_cy<20>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<21> (filter/Madd_y_n_optel_addsub0000_cy<21>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<22> (filter/Madd_y_n_optel_addsub0000_cy<22>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<23> (filter/Madd_y_n_optel_addsub0000_cy<23>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<24> (filter/Madd_y_n_optel_addsub0000_cy<24>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<25> (filter/Madd_y_n_optel_addsub0000_cy<25>)
+     MUXCY:CI->O           1   0.045   0.000  filter/Madd_y_n_optel_addsub0000_cy<26> (filter/Madd_y_n_optel_addsub0000_cy<26>)
+     XORCY:CI->O           1   0.360   0.688  filter/Madd_y_n_optel_addsub0000_xor<27> (filter/y_n_optel_addsub0000<27>)
+     LUT2:I1->O            1   0.195   0.000  filter/Madd_y_n_optel_addsub0001_Madd_lut<27> (N164)
+     MUXCY:S->O            1   0.366   0.000  filter/Madd_y_n_optel_addsub0001_Madd_cy<27> (filter/Madd_y_n_optel_addsub0001_Madd_cy<27>)
+     XORCY:CI->O           1   0.360   0.688  filter/Madd_y_n_optel_addsub0001_Madd_xor<28> (filter/y_n_optel_addsub0001<28>)
+     LUT2:I1->O            1   0.195   0.000  filter/Msub_y_n_optel_addsub0002_Madd_lut<28> (N210)
+     MUXCY:S->O            1   0.366   0.000  filter/Msub_y_n_optel_addsub0002_Madd_cy<28> (filter/Msub_y_n_optel_addsub0002_Madd_cy<28>)
+     XORCY:CI->O           1   0.360   0.688  filter/Msub_y_n_optel_addsub0002_Madd_xor<29> (filter/y_n_optel_addsub0002<29>)
+     LUT2:I1->O            1   0.195   0.000  filter/Msub_y_n_optel_sub0000_Madd_lut<29> (N2561)
+     MUXCY:S->O            1   0.366   0.000  filter/Msub_y_n_optel_sub0000_Madd_cy<29> (filter/Msub_y_n_optel_sub0000_Madd_cy<29>)
+     XORCY:CI->O           5   0.360   0.383  filter/Msub_y_n_optel_sub0000_Madd_xor<30> (yn1_schrijf_weg<16>)
+     DSP48:A16->PCOUT47    1   4.403   0.000  agc1/Mmult_inputstate (agc1/Mmult_inputstate_PCOUT_to_Mmult_inputstate1_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc1/Mmult_inputstate1 (agc1/Mmult_inputstate1_PCOUT_to_Mmult_inputstate2_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc1/Mmult_inputstate2 (agc1/Mmult_inputstate2_PCOUT_to_Mmult_inputstate3_PCIN_47)
+     DSP48:PCIN47->P0      1   2.270   0.688  agc1/Mmult_inputstate3 (agc1/inputstate<34>)
+     LUT2:I1->O            1   0.195   0.000  agc1/Msub_output_ff_lut<3> (agc1/N8)
+     MUXCY:S->O            1   0.366   0.000  agc1/Msub_output_ff_cy<3> (agc1/Msub_output_ff_cy<3>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<4> (agc1/Msub_output_ff_cy<4>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<5> (agc1/Msub_output_ff_cy<5>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<6> (agc1/Msub_output_ff_cy<6>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<7> (agc1/Msub_output_ff_cy<7>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<8> (agc1/Msub_output_ff_cy<8>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<9> (agc1/Msub_output_ff_cy<9>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<10> (agc1/Msub_output_ff_cy<10>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<11> (agc1/Msub_output_ff_cy<11>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<12> (agc1/Msub_output_ff_cy<12>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<13> (agc1/Msub_output_ff_cy<13>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<14> (agc1/Msub_output_ff_cy<14>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<15> (agc1/Msub_output_ff_cy<15>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<16> (agc1/Msub_output_ff_cy<16>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<17> (agc1/Msub_output_ff_cy<17>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<18> (agc1/Msub_output_ff_cy<18>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<19> (agc1/Msub_output_ff_cy<19>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<20> (agc1/Msub_output_ff_cy<20>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<21> (agc1/Msub_output_ff_cy<21>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<22> (agc1/Msub_output_ff_cy<22>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<23> (agc1/Msub_output_ff_cy<23>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<24> (agc1/Msub_output_ff_cy<24>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<25> (agc1/Msub_output_ff_cy<25>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<26> (agc1/Msub_output_ff_cy<26>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<27> (agc1/Msub_output_ff_cy<27>)
+     MUXCY:CI->O           1   0.045   0.000  agc1/Msub_output_ff_cy<28> (agc1/Msub_output_ff_cy<28>)
+     MUXCY:CI->O           0   0.045   0.000  agc1/Msub_output_ff_cy<29> (agc1/Msub_output_ff_cy<29>)
+     XORCY:CI->O          59   0.360   1.361  agc1/Msub_output_ff_xor<30> (agc1/output_ff<30>)
+     LUT2:I1->O            5   0.195   0.383  agc1/HWR<0>1 (output_agc1<0>)
+     DSP48:A0->PCOUT47     1   4.403   0.000  agc2/Mmult_inputstate (agc2/Mmult_inputstate_PCOUT_to_Mmult_inputstate1_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc2/Mmult_inputstate1 (agc2/Mmult_inputstate1_PCOUT_to_Mmult_inputstate2_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc2/Mmult_inputstate2 (agc2/Mmult_inputstate2_PCOUT_to_Mmult_inputstate3_PCIN_47)
+     DSP48:PCIN47->P0      1   2.270   0.585  agc2/Mmult_inputstate3 (agc2/inputstate<34>)
+     LUT3:I2->O            1   0.195   0.000  agc2/Msub_output_ff_lut<3> (agc2/N8)
+     MUXCY:S->O            1   0.366   0.000  agc2/Msub_output_ff_cy<3> (agc2/Msub_output_ff_cy<3>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<4> (agc2/Msub_output_ff_cy<4>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<5> (agc2/Msub_output_ff_cy<5>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<6> (agc2/Msub_output_ff_cy<6>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<7> (agc2/Msub_output_ff_cy<7>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<8> (agc2/Msub_output_ff_cy<8>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<9> (agc2/Msub_output_ff_cy<9>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<10> (agc2/Msub_output_ff_cy<10>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<11> (agc2/Msub_output_ff_cy<11>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<12> (agc2/Msub_output_ff_cy<12>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<13> (agc2/Msub_output_ff_cy<13>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<14> (agc2/Msub_output_ff_cy<14>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<15> (agc2/Msub_output_ff_cy<15>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<16> (agc2/Msub_output_ff_cy<16>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<17> (agc2/Msub_output_ff_cy<17>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<18> (agc2/Msub_output_ff_cy<18>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<19> (agc2/Msub_output_ff_cy<19>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<20> (agc2/Msub_output_ff_cy<20>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<21> (agc2/Msub_output_ff_cy<21>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<22> (agc2/Msub_output_ff_cy<22>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<23> (agc2/Msub_output_ff_cy<23>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<24> (agc2/Msub_output_ff_cy<24>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<25> (agc2/Msub_output_ff_cy<25>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<26> (agc2/Msub_output_ff_cy<26>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<27> (agc2/Msub_output_ff_cy<27>)
+     MUXCY:CI->O           1   0.044   0.000  agc2/Msub_output_ff_cy<28> (agc2/Msub_output_ff_cy<28>)
+     MUXCY:CI->O           0   0.044   0.000  agc2/Msub_output_ff_cy<29> (agc2/Msub_output_ff_cy<29>)
+     XORCY:CI->O          59   0.360   1.361  agc2/Msub_output_ff_xor<30> (agc2/output_ff<30>)
+     LUT2:I1->O            5   0.195   0.383  agc2/HWR<0>1 (output_agc2<0>)
+     DSP48:A0->PCOUT47     1   4.403   0.000  agc3/Mmult_inputstate (agc3/Mmult_inputstate_PCOUT_to_Mmult_inputstate1_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc3/Mmult_inputstate1 (agc3/Mmult_inputstate1_PCOUT_to_Mmult_inputstate2_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc3/Mmult_inputstate2 (agc3/Mmult_inputstate2_PCOUT_to_Mmult_inputstate3_PCIN_47)
+     DSP48:PCIN47->P0      1   2.270   0.585  agc3/Mmult_inputstate3 (agc3/inputstate<34>)
+     LUT3:I2->O            1   0.195   0.000  agc3/Msub_output_ff_lut<3> (agc3/N8)
+     MUXCY:S->O            1   0.366   0.000  agc3/Msub_output_ff_cy<3> (agc3/Msub_output_ff_cy<3>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<4> (agc3/Msub_output_ff_cy<4>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<5> (agc3/Msub_output_ff_cy<5>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<6> (agc3/Msub_output_ff_cy<6>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<7> (agc3/Msub_output_ff_cy<7>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<8> (agc3/Msub_output_ff_cy<8>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<9> (agc3/Msub_output_ff_cy<9>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<10> (agc3/Msub_output_ff_cy<10>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<11> (agc3/Msub_output_ff_cy<11>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<12> (agc3/Msub_output_ff_cy<12>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<13> (agc3/Msub_output_ff_cy<13>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<14> (agc3/Msub_output_ff_cy<14>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<15> (agc3/Msub_output_ff_cy<15>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<16> (agc3/Msub_output_ff_cy<16>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<17> (agc3/Msub_output_ff_cy<17>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<18> (agc3/Msub_output_ff_cy<18>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<19> (agc3/Msub_output_ff_cy<19>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<20> (agc3/Msub_output_ff_cy<20>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<21> (agc3/Msub_output_ff_cy<21>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<22> (agc3/Msub_output_ff_cy<22>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<23> (agc3/Msub_output_ff_cy<23>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<24> (agc3/Msub_output_ff_cy<24>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<25> (agc3/Msub_output_ff_cy<25>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<26> (agc3/Msub_output_ff_cy<26>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<27> (agc3/Msub_output_ff_cy<27>)
+     MUXCY:CI->O           1   0.044   0.000  agc3/Msub_output_ff_cy<28> (agc3/Msub_output_ff_cy<28>)
+     MUXCY:CI->O           0   0.044   0.000  agc3/Msub_output_ff_cy<29> (agc3/Msub_output_ff_cy<29>)
+     XORCY:CI->O          59   0.360   1.361  agc3/Msub_output_ff_xor<30> (agc3/output_ff<30>)
+     LUT2:I1->O            5   0.195   0.383  agc3/HWR<0>1 (output_agc3<0>)
+     DSP48:A0->PCOUT47     1   4.403   0.000  agc4/Mmult_inputstate (agc4/Mmult_inputstate_PCOUT_to_Mmult_inputstate1_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc4/Mmult_inputstate1 (agc4/Mmult_inputstate1_PCOUT_to_Mmult_inputstate2_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc4/Mmult_inputstate2 (agc4/Mmult_inputstate2_PCOUT_to_Mmult_inputstate3_PCIN_47)
+     DSP48:PCIN47->P0      1   2.270   0.585  agc4/Mmult_inputstate3 (agc4/inputstate<34>)
+     LUT3:I2->O            1   0.195   0.000  agc4/Msub_output_ff_lut<3> (agc4/N8)
+     MUXCY:S->O            1   0.366   0.000  agc4/Msub_output_ff_cy<3> (agc4/Msub_output_ff_cy<3>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<4> (agc4/Msub_output_ff_cy<4>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<5> (agc4/Msub_output_ff_cy<5>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<6> (agc4/Msub_output_ff_cy<6>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<7> (agc4/Msub_output_ff_cy<7>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<8> (agc4/Msub_output_ff_cy<8>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<9> (agc4/Msub_output_ff_cy<9>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<10> (agc4/Msub_output_ff_cy<10>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<11> (agc4/Msub_output_ff_cy<11>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<12> (agc4/Msub_output_ff_cy<12>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<13> (agc4/Msub_output_ff_cy<13>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<14> (agc4/Msub_output_ff_cy<14>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<15> (agc4/Msub_output_ff_cy<15>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<16> (agc4/Msub_output_ff_cy<16>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<17> (agc4/Msub_output_ff_cy<17>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<18> (agc4/Msub_output_ff_cy<18>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<19> (agc4/Msub_output_ff_cy<19>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<20> (agc4/Msub_output_ff_cy<20>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<21> (agc4/Msub_output_ff_cy<21>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<22> (agc4/Msub_output_ff_cy<22>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<23> (agc4/Msub_output_ff_cy<23>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<24> (agc4/Msub_output_ff_cy<24>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<25> (agc4/Msub_output_ff_cy<25>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<26> (agc4/Msub_output_ff_cy<26>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<27> (agc4/Msub_output_ff_cy<27>)
+     MUXCY:CI->O           1   0.045   0.000  agc4/Msub_output_ff_cy<28> (agc4/Msub_output_ff_cy<28>)
+     MUXCY:CI->O           0   0.045   0.000  agc4/Msub_output_ff_cy<29> (agc4/Msub_output_ff_cy<29>)
+     XORCY:CI->O          44   0.360   1.303  agc4/Msub_output_ff_xor<30> (agc4/output_ff<30>)
+     LUT2:I1->O            2   0.195   0.377  agc4/HWR<9>1 (agc4/output<9>)
+     DSP48:A9->PCOUT47     1   4.403   0.000  agc4/Mmult_statebijhouden_mult0000 (agc4/Mmult_statebijhouden_mult0000_PCOUT_to_Mmult_statebijhouden_mult00001_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc4/Mmult_statebijhouden_mult00001 (agc4/Mmult_statebijhouden_mult00001_PCOUT_to_Mmult_statebijhouden_mult00002_PCIN_47)
+     DSP48:PCIN47->PCOUT47    1   2.363   0.000  agc4/Mmult_statebijhouden_mult00002 (agc4/Mmult_statebijhouden_mult00002_PCOUT_to_Mmult_statebijhouden_mult00003_PCIN_47)
+     DSP48:PCIN47->P0      1   2.270   0.688  agc4/Mmult_statebijhouden_mult00003 (agc4/statebijhouden_mult0000<34>)
+     LUT2:I1->O            1   0.195   0.000  agc4/Madd_statebijhouden_lut<38> (agc4/N132)
+     MUXCY:S->O            1   0.366   0.000  agc4/Madd_statebijhouden_cy<38> (agc4/Madd_statebijhouden_cy<38>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<39> (agc4/Madd_statebijhouden_cy<39>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<40> (agc4/Madd_statebijhouden_cy<40>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<41> (agc4/Madd_statebijhouden_cy<41>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<42> (agc4/Madd_statebijhouden_cy<42>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<43> (agc4/Madd_statebijhouden_cy<43>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<44> (agc4/Madd_statebijhouden_cy<44>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<45> (agc4/Madd_statebijhouden_cy<45>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<46> (agc4/Madd_statebijhouden_cy<46>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<47> (agc4/Madd_statebijhouden_cy<47>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<48> (agc4/Madd_statebijhouden_cy<48>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<49> (agc4/Madd_statebijhouden_cy<49>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<50> (agc4/Madd_statebijhouden_cy<50>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<51> (agc4/Madd_statebijhouden_cy<51>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<52> (agc4/Madd_statebijhouden_cy<52>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<53> (agc4/Madd_statebijhouden_cy<53>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<54> (agc4/Madd_statebijhouden_cy<54>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<55> (agc4/Madd_statebijhouden_cy<55>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<56> (agc4/Madd_statebijhouden_cy<56>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<57> (agc4/Madd_statebijhouden_cy<57>)
+     MUXCY:CI->O           1   0.044   0.000  agc4/Madd_statebijhouden_cy<58> (agc4/Madd_statebijhouden_cy<58>)
+     XORCY:CI->O           2   0.360   0.758  agc4/Madd_statebijhouden_xor<59> (agc4/statebijhouden<59>)
+     LUT3:I0->O            1   0.195   0.000  agc4/Mcompar_newstate_cmp_gt0000_lut<12> (agc4/N168)
+     MUXCY:S->O            1   0.366   0.000  agc4/Mcompar_newstate_cmp_gt0000_cy<12> (agc4/Mcompar_newstate_cmp_gt0000_cy<12>)
+     MUXCY:CI->O          31   0.369   1.252  agc4/Mcompar_newstate_cmp_gt0000_cy<13> (agc4/Mcompar_newstate_cmp_gt0000_cy<13>)
+     LUT2:I1->O            6   0.195   0.397  agc4/newstate<30>1 (new_state4<30>)
+     RAMB16:DIA30              0.230          RAM_AGCB/Mram_state4_rij
+    ----------------------------------------
+    Total                     94.298ns (78.316ns logic, 15.982ns route)
+                                       (83.1% logic, 16.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 5 / 3
+-------------------------------------------------------------------------
+Offset:              1.854ns (Levels of Logic = 1)
+  Source:            fsm/clk_enable (FF)
+  Destination:       START (PAD)
+  Source Clock:      clk rising
+
+  Data Path: fsm/clk_enable to START
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             43   0.360   1.299  fsm/clk_enable (fsm/clk_enable)
+     LUT3:I1->O            0   0.195   0.000  START1 (START)
+    ----------------------------------------
+    Total                      1.854ns (0.555ns logic, 1.299ns route)
+                                       (29.9% logic, 70.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'spike_clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.100ns (Levels of Logic = 0)
+  Source:            spike_out_mem/blockram/Mram_r_memory (RAM)
+  Destination:       spike_data (PAD)
+  Source Clock:      spike_clk rising
+
+  Data Path: spike_out_mem/blockram/Mram_r_memory to spike_data
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16:CLKB->DOB0     0   2.100   0.000  spike_out_mem/blockram/Mram_r_memory (spike_data)
+    ----------------------------------------
+    Total                      2.100ns (2.100ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
+CPU : 299.96 / 300.01 s | Elapsed : 307.00 / 307.00 s
+ 
+--> 
+
+
+Total memory usage is 359496 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   85 (   0 filtered)
+Number of infos    :   28 (   0 filtered)
+

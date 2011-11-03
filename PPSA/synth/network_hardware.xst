@@ -1,0 +1,11 @@
+set -loop_iteration_limit 256
+run
+-ifn network_hardware.prj
+-ifmt VHDL
+-ofn network_hardware.ngc
+-top network_hardware
+-ofmt NGC 
+-p virtex4
+-opt_mode Area
+-opt_level 2
+-iobuf YES

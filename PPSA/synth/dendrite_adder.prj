@@ -1,0 +1,2 @@
+vhdl work "full_adder.vhdl"
+vhdl work "dendrite_adder.vhdl"

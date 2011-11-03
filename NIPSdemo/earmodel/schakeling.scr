@@ -1,0 +1,1 @@
+run -opt_mode speed -opt_level 2 -p xc4vsx35ff668-10 -top schakeling -ifn schakeling.prj -ofn schakeling.ngc -iobuf no -hierarchy_separator /

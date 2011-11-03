@@ -1,0 +1,4 @@
+vhdl work "utility.vhdl"
+vhdl work "settings.vhdl"
+vhdl work "full_adder.vhdl"
+vhdl work "membrane.vhdl"

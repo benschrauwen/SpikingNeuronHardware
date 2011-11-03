@@ -1,0 +1,11 @@
+set -loop_iteration_limit 256
+run
+-ifn neuron.prj
+-ifmt VHDL
+-ofn neuron.ngc
+-top neuron_$NEURON_NR$
+-ofmt NGC 
+-p virtex4
+-opt_mode Area
+-opt_level 2
+-iobuf NO

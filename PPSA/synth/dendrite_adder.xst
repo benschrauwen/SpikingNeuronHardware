@@ -1,0 +1,9 @@
+run
+-ifn dendrite_adder.prj
+-ifmt VHDL
+-ofn dendrite_adder.ngc
+-ofmt NGC 
+-p virtex4
+-opt_mode Area
+-opt_level 2
+-iobuf NO

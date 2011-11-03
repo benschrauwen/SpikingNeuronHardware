@@ -1,0 +1,7 @@
+commandpipe.vhdl
+full_adder.vhdl
+neuron.vhdl
+settings.vhdl
+synapse.vhdl
+synapse_model.vhdl
+utility.vhdl
